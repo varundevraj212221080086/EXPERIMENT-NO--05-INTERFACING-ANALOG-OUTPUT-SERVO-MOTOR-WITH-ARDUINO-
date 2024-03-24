@@ -1,8 +1,8 @@
-###  DATE: 
+###  DATE: 22/30/2024
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME: varundevraj k
+###  ROLL NO : 212221080086
+###  DEPARTMENT: mechanical 
 
 
 # EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
@@ -57,7 +57,11 @@ An external controller (such as the Arduino) tells the servo where to go with a 
 CIRCUIT DIAGRAM
  
  
- ![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
+![model](https://github.com/varundevraj212221080086/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/161024553/05cb60a5-0465-4d11-b0e5-3dfbb780a939)
+
+![graph](https://github.com/varundevraj212221080086/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/161024553/21cbe0ee-b0b7-4287-803f-4fa5096a1181)
+
+![circuit](https://github.com/varundevraj212221080086/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/161024553/e9e43509-3938-4a32-b02d-1e499d0cc27e)
 
 ### FIGURE 04 CIRCUIT DIAGRAM
 
@@ -76,7 +80,83 @@ CIRCUIT DIAGRAM
 ### PROGRAM :
  
 
+#include<Servo.h>
 
+Servo sr1;
+
+int pos=0;
+
+int red=9;
+
+int green=8;
+
+
+void setup()
+
+{
+
+  sr1.attach(6);
+  
+  Serial.begin(9600);
+  
+  pinMode(red, OUTPUT);
+  
+  pinMode(green,OUTPUT);
+  
+}
+
+void loop()
+
+{
+
+  for(pos=0;pos<=180;pos+=5){
+    
+    sr1.write(pos);
+    
+      delay(200);
+      
+    Serial.println(pos);
+    
+  }
+  
+  for(pos=180;pos>=180;pos-=5){
+  
+    sr1.write(pos);
+    
+    delay(200);
+    
+    Serial.println(pos);
+    
+  }
+  
+
+  if(pos>120)
+  
+  {
+  
+    digitalWrite(red,HIGH);
+    
+    delay(200);
+    
+    digitalWrite(red,LOW);
+    
+    delay(200);
+    
+  }
+  
+  else{
+  
+    digitalWrite(green, HIGH);
+    
+    delay(200); // Wait for 1000 millisecond(s)
+    
+    digitalWrite(green, LOW);
+    
+    delay(200);
+    
+  }
+  
+}
 
 
 

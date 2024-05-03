@@ -1,12 +1,9 @@
+# EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
 ###  DATE: 22/30/2024
 
 ###  NAME: varundevraj k
 ###  ROLL NO : 212221080086
 ###  DEPARTMENT: mechanical 
-
-
-# EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
-
 ### AIM
 To interface an Analog output (servo motor) and modify the angular displacement of the servo using PWM signal .
 COMPONENTS REQUIRED:
